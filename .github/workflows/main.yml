@@ -1,0 +1,44 @@
+name: My First Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  my-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Step 1 - Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Step 2 - Build
+      run: |
+        echo "==============================="
+        echo "  Build Started!"
+        echo "  Code Compiling..."
+        echo "  Build Complete!"
+        echo "==============================="
+
+    - name: Step 3 - Testing
+      run: |
+        echo "==============================="
+        echo "  Testing Started!"
+        echo "  Test 1 - Pass"
+        echo "  Test 2 - Pass"
+        echo "  Test 3 - Pass"
+        echo "  All Tests Passed!"
+        echo "==============================="
+
+    - name: Step 4 - Deploy
+      run: |
+        echo "==============================="
+        echo "  Deploy Started!"
+        echo "  Uploading to Server..."
+        echo "  Application is Live!"
+        echo "==============================="
+
+    - name: Step 5 - Pipeline Complete
+      run: echo "Pipeline Successful! Congratulations!"
